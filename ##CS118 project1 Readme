@@ -1,0 +1,11 @@
+##CS118 project1 Readme
+1.写在client.cpp 里面
+2.函数都在hpp, 可以调用
+3.过程
+｛
+	1.	分解torrent, 得到info
+	2.	check hash（metainfo）, 检查piece
+	3.	根据torrent里面信息和trcker建立连接
+			1.http GET -> peer info
+	4.	和别的peer 交流得到剩余piece
+｝
