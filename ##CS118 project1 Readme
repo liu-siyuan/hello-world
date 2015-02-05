@@ -9,3 +9,63 @@
 			1.http GET -> peer info
 	4.	和别的peer 交流得到剩余piece
 ｝
+
+
+
+Part 2:
+
+1.file checking
+	check if file exist
+	check exsiting against "pieces"(torrent)
+	*hint: reallocate file space if file size is different
+
+2.peer id = SIMPLEBT-TEST-PEERID
+	used in tracker request
+	handshake(msg, hand shake msg)
+
+3.tracker
+	firstReq:
+	  event:started
+	  upladed = 0
+	  downloaded=0
+	  left is missing in the file(number of bytes)
+	finished:
+	  event = completed
+	interval :
+	   get it from tracker
+
+4.client listen port
+ 	get it from arg[1] = m_cilentPort
+
+ 5.setup peer connection
+ 	one connection for each peer
+ 	*1: do not connect to your self
+ 	*2: peer list may change over each response
+
+6. peer connection
+  include: 
+	– handshake
+	– unchoke
+	– interested
+	– have
+	– bitfield
+	– request
+	– piece 
+  not include:
+	– keep-alive
+	– choke
+	– not-interested
+	– cancel 
+
+7. handshake
+	exchange info_hash & peer_id(SIMPLE-TEST-PEERID)
+	send handshake
+	wait for handshake
+		check hashinfo
+			if right reply handshake
+			else terminate
+
+8. Bitfield(msg-base)
+	
+
+
