@@ -67,5 +67,14 @@ Part 2:
 
 8. Bitfield(msg-base)
 	
+周四 update:
 
+1.check files
+	find out need which pieces
+	check exsiting pieces' hash
+2.connect with each other peer
+	
+3.fill in the index/bitfield
+
+4.make it into function
 
